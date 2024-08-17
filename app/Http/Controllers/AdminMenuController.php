@@ -38,8 +38,9 @@ class AdminMenuController extends Controller
         return redirect()->route('admin.menu.index')->with('success', 'Menu item added successfully!');
     }
 
-    public function edit(MenuItem $menuItem)
+    public function edit($id)
     {
+        $menuItem = MenuItem::find($id);
         return view('admin.menu.edit', compact('menuItem'));
     }
 
