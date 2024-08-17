@@ -43,8 +43,9 @@ class AdminMenuController extends Controller
         return view('admin.menu.edit', compact('menuItem'));
     }
 
-    public function update(Request $request, MenuItem $menuItem)
+    public function update(Request $request, $id)
     {
+        $menuItem = MenuItem::find($id);
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
@@ -63,8 +64,9 @@ class AdminMenuController extends Controller
         return redirect()->route('admin.menu.index')->with('success', 'Menu item updated successfully!');
     }
 
-    public function destroy(MenuItem $menuItem)
+    public function destroy($id)
     {
+        $menuItem = MenuItem::find($id);
         $menuItem->delete();
 
         return redirect()->route('admin.menu.index')->with('success', 'Menu item deleted successfully!');
