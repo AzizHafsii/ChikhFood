@@ -17,11 +17,13 @@ class ContactController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
+            'phone' => 'required|string|max:15', // Add validation for phone
             'message' => 'required|string',
         ]);
-
+    
         ContactMessage::create($validatedData);
-
+    
         return redirect()->route('contact.create')->with('success', 'Your message has been sent successfully!');
     }
+    
 }

@@ -14,6 +14,9 @@ Route::get('/reservation', [ReservationController::class, 'create'])->name('rese
 Route::post('/reservation', [ReservationController::class, 'store'])->name('reservation.store');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('working-times', function () {
+    return view('workingtime'); // This should match the Blade file you created
+})->name('working-time');
 
 Route::get('/menu', [MenuItemController::class, 'index'])->name('menu.index');
 
@@ -26,6 +29,8 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/menu', [AdminController::class, 'menu'])->name('menu');
     Route::get('/reservations', [AdminController::class, 'reservations'])->name('reservations');
     Route::get('/reclamations', [AdminController::class, 'reclamations'])->name('reclamations');
+    Route::post('/reservations/{id}/confirm', [AdminController::class, 'confirm'])->name('reservations.confirm');
+    Route::post('/reservations/{id}/decline', [AdminController::class, 'decline'])->name('reservations.decline');
 
     // Admin Menu Management Routes
     Route::get('/menu/{id}/edit', [AdminMenuController::class, 'edit'])->name('menu.edit');

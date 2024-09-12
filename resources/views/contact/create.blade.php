@@ -37,6 +37,13 @@
                 @enderror
             </div>
             <div class="form-group">
+                <label for="phone">Phone Number</label> <!-- New Phone Number Field -->
+                <input type="text" name="phone" id="phone" class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone') }}" required>
+                @error('phone')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="form-group">
                 <label for="message">Message</label>
                 <textarea name="message" id="message" class="form-control @error('message') is-invalid @enderror" rows="5" required>{{ old('message') }}</textarea>
                 @error('message')

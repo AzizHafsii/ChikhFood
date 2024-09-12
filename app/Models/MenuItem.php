@@ -14,6 +14,7 @@ class MenuItem extends Model
         'description',
         'price',
         'image',
+        'category',
     ];
 
     /**

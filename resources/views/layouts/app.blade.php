@@ -34,6 +34,9 @@
             top: 0;
             z-index: 1020;
         }
+        footer {
+            margin-top: 60px; /* Adds space above the footer */
+        }
     </style>
 </head>
 <body>
@@ -48,9 +51,9 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ route('menu.index') }}">Menu</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('reservation.create') }}">Reservation</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#working-time">Working Time</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('contact.create') }}">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('reservation.create') }}">Réservation</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('working-time') }}">Working Time</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ route('contact.create') }}">Complaint</a></li>
                     </ul>
                 </div>
             </nav>

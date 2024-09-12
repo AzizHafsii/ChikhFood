@@ -9,9 +9,11 @@ class MenuItemController extends Controller
 {
     public function index()
     {
-        $menuItems = MenuItem::all();
+        // Fetch all menu items and group by category
+        $menuItems = MenuItem::all()->groupBy('category');
         return view('menu.index', compact('menuItems'));
     }
+    
 
     public function create()
     {
@@ -24,6 +26,7 @@ class MenuItemController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'nullable|string',
             'price' => 'required|numeric',
+            'category' => 'nullable|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 

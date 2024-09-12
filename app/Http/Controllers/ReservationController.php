@@ -11,7 +11,11 @@ class ReservationController extends Controller
     {
         return view('reservation.create');
     }
-
+    public function index()
+{
+    $reservations = Reservation::all(); // Fetch all reservations
+    return view('reservation.index', compact('reservations'));
+}
     public function store(Request $request)
     {
         $validatedData = $request->validate([

@@ -24,6 +24,15 @@
                     <label for="image">Image</label>
                     <input type="file" name="image" id="image" class="form-control">
                 </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <select name="category" id="category" class="form-control" required>
+                        <option value="" disabled selected>Select a category</option>
+                        <option value="Sandwiches">Sandwiches</option>
+                        <option value="Pizzas">Pizzas</option>
+                        <option value="Plats">Plats</option>
+                    </select>
+                </div>
                 <button type="submit" class="btn btn-success">Add Menu Item</button>
             </form>
         </div>

@@ -1,0 +1,13 @@
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+
+.card-header h5 {
+    font-size: 1.25rem;
+}
+
+.card-body h6 {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
